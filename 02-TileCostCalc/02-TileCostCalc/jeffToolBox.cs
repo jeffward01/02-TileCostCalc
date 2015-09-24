@@ -52,7 +52,6 @@ namespace _02_TileCostCalc
 
 
                 }
-
                 catch
                 {
 
@@ -68,8 +67,7 @@ namespace _02_TileCostCalc
         {
             foreach (char c in str)
             {
-                if (c < '0' || c > '9')
-                    return false;
+                if (c < '0' || c > '9') return false;
             }
 
             return true;
@@ -78,9 +76,9 @@ namespace _02_TileCostCalc
         public static string RemoveLetters(string myString)
         {
             string newString = Regex.Replace(myString, "[A-Za-z ]", "");
-             
+
             return newString;
-    }
+        }
         public static bool hasLetters(string myString)
         {
             foreach (var i in myString)

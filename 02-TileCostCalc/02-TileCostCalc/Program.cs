@@ -24,7 +24,6 @@ namespace _02_TileCostCalc
             {
                 Environment.Exit(0);
             }
-
             else if (userconSub == "yes")
             {
 
@@ -45,7 +44,6 @@ namespace _02_TileCostCalc
                 {
                     Environment.Exit(0);
                 }
-
                 else if (u1serconSub == "yes")
                 {
                     Console.WriteLine("Press Enter to exit and then reload your application");
@@ -78,7 +76,7 @@ namespace _02_TileCostCalc
 
             return message;
 
-                 
+
         }
 
         private void Main()
@@ -86,7 +84,7 @@ namespace _02_TileCostCalc
             throw new NotImplementedException();
         }
 
-        public static void  Intro()
+        public static void Intro()
         {
             Console.WriteLine("Welcome to the Tile Cost Calcualtor Application!");
 
@@ -119,49 +117,46 @@ namespace _02_TileCostCalc
                 Console.WriteLine("Enter the cost of your tile per sq foot");
 
 
-                    string tileCostInput = Console.ReadLine();
-                    tileCostInput =  jeffToolBox.RemoveSpecialCharacters(jeffToolBox.RemoveLetters(tileCostInput.Replace("$", string.Empty)));
-                    
-                    //Check to see if numbers are present
-                    //in not present get mad
-                    if (tileCostInput == "")
-                    {
+                string tileCostInput = Console.ReadLine();
+                tileCostInput = jeffToolBox.RemoveSpecialCharacters(jeffToolBox.RemoveLetters(tileCostInput.Replace("$", string.Empty)));
+
+                //Check to see if numbers are present
+                //in not present get mad
+                if (tileCostInput == "")
+                {
 
                     //Error
                     Console.Clear();
-                    Console.WriteLine( tileCostInput + "You did not enter a number.  Please enter a number a try again.  \n \n \n \n Press Enter to restart");
+                    Console.WriteLine(tileCostInput + "You did not enter a number.  Please enter a number a try again.  \n \n \n \n Press Enter to restart");
                     Console.ReadLine();
                     Console.Clear();
                     Main(args);
-                  
-                    } 
-                                  
+
+                }
+
                 decimal tileCost = jeffToolBox.StringtoDecimal(tileCostInput);
 
 
 
                 Console.WriteLine("\n \n Your tile cost per sq foot is: " + jeffToolBox.DecimalToDollar(tileCost) + ".\n");
-          
 
-                
+
+
                 //Get input from user
 
-              
-                    try
-                    {
-
-
+                try
+                {
                     string userInput = "rectangle";
-                        string input = userInput.ToLower();
+                    string input = userInput.ToLower();
 
-                        //Pending Users input execute either Rectangle, Tri, or Cir
-                        switch (input)
-                        {
-                            case "rectangle":
-                                string message = GetRectangleMeasurements(tileCost);
+                    //Pending Users input execute either Rectangle, Tri, or Cir
+                    switch (input)
+                    {
+                        case "rectangle":
+                            string message = GetRectangleMeasurements(tileCost);
                             //insert quit or restart func
-                                Console.WriteLine(message);
-                                Console.ReadLine();
+                            Console.WriteLine(message);
+                            Console.ReadLine();
                             Console.WriteLine("Continue? (yes/no)");
                             string usersub = Console.ReadLine();
                             string userconSub = usersub.ToLower();
@@ -170,27 +165,19 @@ namespace _02_TileCostCalc
                             {
                                 Environment.Exit(0);
                             }
-
-
                             break;
-                            case "triangle":
-                                ;
-                                break;
-                            case "circular":
-                                ;
-                                break;
-                            default:
-                            
-                            Console.WriteLine("-------------------\n "+input+" does not compute... \n");
-                                Console.WriteLine("Invalid input, please check your spelling... foo \n \n Please spell correctly and try again. \n \n Press Enter to Restart");
+                        default:
+
+                            Console.WriteLine("-------------------\n " + input + " does not compute... \n");
+                            Console.WriteLine("Invalid input, please check your spelling... foo \n \n Please spell correctly and try again. \n \n Press Enter to Restart");
                             Console.ReadLine();
                             Console.Clear();
                             break;
-                        }
-
                     }
-                    catch
-                    {
+
+                }
+                catch
+                {
                     Console.WriteLine("Continue? (yes/no)");
                     string usersub = Console.ReadLine();
                     string userconSub = usersub.ToLower();
@@ -203,9 +190,8 @@ namespace _02_TileCostCalc
                     Console.Clear();
                 }
 
-                    }
-                }
-              
-                }
             }
-        
+        }
+
+    }
+}
