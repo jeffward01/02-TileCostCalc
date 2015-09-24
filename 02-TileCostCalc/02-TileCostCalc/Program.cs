@@ -133,11 +133,8 @@ namespace _02_TileCostCalc
                     Console.ReadLine();
                     Console.Clear();
                     Main(args);
-                    //restrat program
-
-
-                    }
-                
+                  
+                    } 
                                   
                 decimal tileCost = jeffToolBox.StringtoDecimal(tileCostInput);
 
@@ -204,19 +201,7 @@ namespace _02_TileCostCalc
                     }
 
                     Console.Clear();
-
-
                 }
-
-                //Return total sq feet, and cost of tile
-                //Draw a Square or Tri or Cir
-               
-                
-                    
-
-                    
-                        
-                     
 
                     }
                 }
