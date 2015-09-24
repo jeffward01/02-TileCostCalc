@@ -11,6 +11,8 @@ namespace _02_TileCostCalc
     {
         public static decimal StringtoDecimal(string myString)
         {
+
+
             decimal myDecimal = Convert.ToDecimal(myString);
 
             return myDecimal;
@@ -76,7 +78,38 @@ namespace _02_TileCostCalc
         public static string RemoveLetters(string myString)
         {
             string newString = Regex.Replace(myString, "[A-Za-z ]", "");
+             
             return newString;
     }
+        public static bool hasLetters(string myString)
+        {
+            foreach (var i in myString)
+            {
+                if ((i < '0' || i > '9'))
+                {
+                    return false;
+
+                }
+            }
+
+            return true;
+
+
+        }
+
+        public static string RemoveSpecialCharacters(string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (char c in str)
+            {
+                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
+                {
+                    sb.Append(c);
+                }
+            }
+            return sb.ToString();
+        }
+
+
     }
 }
